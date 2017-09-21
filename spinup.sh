@@ -54,6 +54,8 @@ aws deploy create-deployment-config --deployment-config-name $cdDeploymentConfig
 aws deploy create-deployment --application-name $cdAppName --deployment-config-name $cdDeploymentConfigName --deployment-group-name $cdDeployGroupName --description "$cdDeploymentDescription" --s3-location bucket=$s3BucketName,bundleType=zip,key=spinupApp.zip
 
 echo "Sleep 20 minutes to allow software installing upon this instance."
+pwd
+ls -l countdownTimer.sh
 ./countdownTimer.sh 1200
 
 PublicIpAddress=`aws ec2 describe-instances --filters "Name=tag:UUID,Values=$UUID" --query "Reservations[].Instances[].PublicIpAddress" --output text`
