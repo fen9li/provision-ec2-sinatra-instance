@@ -1,0 +1,24 @@
+# appspec.yml file to provision ec2 sinatra instance using CodeDeploy
+
+version: 0.0
+os: linux
+
+# Copy all files to /tmp/spinupApp
+files:
+  - source: /
+    destination: /tmp/spinupApp
+
+hooks:
+  BeforeInstall:
+    - location: preInstall.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: afterInstall.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: startSpinupApp.sh
+      timeout: 300
+      runas: ec2-user
+
