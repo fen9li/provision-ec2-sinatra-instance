@@ -17,6 +17,6 @@ aws cloudformation delete-stack --stack-name $cfStackName
 aws deploy delete-application --application-name $cdAppName
 aws deploy delete-deployment-config --deployment-config-name $cdDeploymentConfigName
 
-echo "Sleeping 3 minutes to allow time for cleanup to complete"
-sleep 180
+echo "Sleeping 5 minutes to allow time for cleanup to complete"
+./countdownTimer.sh 300
 echo "End of cleanup script"

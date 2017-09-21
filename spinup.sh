@@ -37,8 +37,8 @@ templatebody="file://`pwd`/cfTemplate.json"
 echo "Running cloudformation to create stack and provision ec2 instance"
 aws cloudformation create-stack --stack-name $cfStackName --template-body $templatebody --parameters ParameterKey=IamInstanceProfileName,ParameterValue=$instanceProfileName ParameterKey=UUID,ParameterValue=$UUID ParameterKey=SSHLocation,ParameterValue=$SSHLocation ParameterKey=ImageId,ParameterValue=$imageId
 
-echo "Sleeping 3 minutes to allow instance to start"
-sleep 180
+echo "Sleeping 5 minutes to allow instance to start"
+./countdownTimer.sh 300
 
 # Run CodeDeploy to create a CodeDeploy Application for fliSinatraBuildImage
 echo "Starting CodeDeploy operations"
@@ -54,8 +54,7 @@ aws deploy create-deployment-config --deployment-config-name $cdDeploymentConfig
 aws deploy create-deployment --application-name $cdAppName --deployment-config-name $cdDeploymentConfigName --deployment-group-name $cdDeployGroupName --description "$cdDeploymentDescription" --s3-location bucket=$s3BucketName,bundleType=zip,key=spinupApp.zip
 
 echo "Sleep 20 minutes to allow software installing upon this instance."
-echo "zzzzzzzzzzzzzzzzzzz"
-sleep 1200
+./countdownTimer.sh 1200
 
 PublicIpAddress=`aws ec2 describe-instances --filters "Name=tag:UUID,Values=$UUID" --query "Reservations[].Instances[].PublicIpAddress" --output text`
 
