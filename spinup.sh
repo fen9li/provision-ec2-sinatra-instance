@@ -13,11 +13,16 @@ source spinup.conf
 echo "Updating spinupApp.zip locally"
 rm spinupApp.zip
 cd spinupApp
+rm -Rf "$githubRepoName"
+git clone "$githubRepo"
+cd "$githubRepoName"
+rm -Rf .git
+cd ..
 zip -qr ../spinupApp.zip *
 cd ..
 
 # Delete possible old version archive and upload new version to S3
-echo "Update spinupApp.zip in s3 bucket"
+echo "Updating spinupApp.zip in s3 bucket"
 aws s3 rm "s3://$s3BucketName/spinupApp.zip"
 aws s3 cp spinupApp.zip "s3://$s3BucketName"
 
@@ -55,4 +60,4 @@ sleep 1200
 PublicIpAddress=`aws ec2 describe-instances --filters "Name=tag:UUID,Values=$UUID" --query "Reservations[].Instances[].PublicIpAddress" --output text`
 
 # Output result
-echo "A new sinatra web server has been spinned up up an AWS ec2 instance. To test it, enter http://$PublicIpAddress/ in your web browser... "
+echo "A new sinatra web server has been spinned up upon an AWS ec2 instance. To test it, enter http://$PublicIpAddress/ in your web browser... and you should see a Hello World message ..."

@@ -2,4 +2,4 @@
 # start spinupApp.sh
 
 cd /tmp/spinupApp
-/bin/bash spinup.sh
+/bin/bash spinupSinatra.sh
