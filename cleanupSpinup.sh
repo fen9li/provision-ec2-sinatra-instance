@@ -5,7 +5,7 @@
 # Usage: cd to the directory containing this script and
 #       give the command "./cleanupSpinup.sh"
 
-echo "Starting cleanup of old resources"
+echo "Starting cleanup of possible legacy resources"
 
 source rolesAndBucket.conf
 source spinup.conf
