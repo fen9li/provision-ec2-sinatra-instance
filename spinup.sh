@@ -6,6 +6,8 @@
 source rolesAndBucket.conf
 source spinup.conf
 
+echo `date`
+
 # Cleanup any resources left from previous build image runs (prevents error msgs.)
 ./cleanupSpinup.sh
 cd $basedir
@@ -71,6 +73,6 @@ echo "TagKey name: UUID"
 echo "TagKey value: $UUID"
 
 echo ""
+echo `date`
 echo "############################"
-echo ""
 echo ""
