@@ -65,6 +65,12 @@ echo ""
 
 echo "Also you can double check from your aws management console, you should be able to see an ec2 instance with below details..."
 
+echo ""
 echo "Instance Id: $InstanceId"
 echo "TagKey name: UUID"
-echo "TageKey value: $UUID"
+echo "TagKey value: $UUID"
+
+echo ""
+echo "############################"
+echo ""
+echo ""
