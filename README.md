@@ -145,8 +145,10 @@ Fri Sep 22 23:56:36 AEST 2017
 ```
 
 * It takes 30 minutes to get the result. 
+* Logon this new instance and check up directory "/opt/codedeploy-agent/deployment-root/<deploymentGroupId>/<deploymentId>" and have fun.
 
 ### Daily operation tasks 
+* To lock down new provisioned instances, just destroy the private key of the keypair. Once you are happy with everything and no need to logon any new instances, destroy the private key. This will give new instances hightest security.
 * To test new version ruby code in same Github repo and branch, move to base directory and run ./spinup.sh script directly.
 * To test new version ruby code in different Github repo and branch, configure 'webAppRepo' & 'webAppRepo' in spinup.conf accordingly and then run ./spinup.sh script.
 
@@ -165,6 +167,7 @@ webAppRepoBranch="develop"
 * The solution can be easily intergrated with Puppet, which makes it a powerful solution to support large scale environment.
 * This solution can provision an ec2 instance to test ruby sinatra based web app code in around 30 minutes. It is recommended to create a private AMI to speed up the provisioning process, should the code needs to test several times a day.
 * It is recommended to do further automation based on this soultion, which aims new version source code pushing to Github would trigger the testing procedure automatically. 
+* Every time spinup.sh script runs, aws allocates a public IP address from its public IP address pool. So the new instance public IP address is not a fix IP address. This wont be a problem in real life. But if a fix IP address is required, an EIP resource can be added. 
 
 License
 ----
