@@ -4,7 +4,7 @@
 secs=$1
 counter=0
 
-echo "Countdown in every 30 seconds now..."
+echo "Countdown every 30 seconds now..."
 echo -n "$secs..."
 while [ $secs -gt 0 ]; do
  secs=$(($secs - 1))

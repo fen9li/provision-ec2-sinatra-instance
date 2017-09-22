@@ -5,18 +5,29 @@
 
 # Cleanup any resources left from previous build image runs (prevents error msgs.)
 ./cleanupSpinup.sh
-
+cd $basedir
 source rolesAndBucket.conf
 source spinup.conf
 
-# Create zip archive
+# update spinupAPP zip archive
 echo "Updating spinupApp.zip locally"
-rm spinupApp.zip
+
+# delete legacy spinupApp.zip if exists
+[ -e spinupApp.zip ] && rm spinupApp.zip
+
+# delete legacy sinatra source code directory if exists
 cd spinupApp
-rm -Rf "$githubRepoName"
-git clone "$githubRepo"
+[ -e "$githubRepoName" ] && rm -Rf "$githubRepoName"
+
+# git clone current version sinatra source code
+gitClonePath="-b $githubRepoBranch $githubRepo"
+git clone "$gitClonePath"
+
+# trim .git directory
 cd "$githubRepoName"
 rm -Rf .git
+
+# zip new version spinupApp zip archive
 cd ..
 zip -qr ../spinupApp.zip *
 cd ..
@@ -38,6 +49,7 @@ echo "Running cloudformation to create stack and provision ec2 instance"
 aws cloudformation create-stack --stack-name $cfStackName --template-body $templatebody --parameters ParameterKey=IamInstanceProfileName,ParameterValue=$instanceProfileName ParameterKey=UUID,ParameterValue=$UUID ParameterKey=SSHLocation,ParameterValue=$SSHLocation ParameterKey=ImageId,ParameterValue=$imageId
 
 echo "Sleeping 5 minutes to allow instance to start"
+cd "$basedir"
 ./countdownTimer.sh 300
 
 # Run CodeDeploy to create a CodeDeploy Application for fliSinatraBuildImage
@@ -54,8 +66,7 @@ aws deploy create-deployment-config --deployment-config-name $cdDeploymentConfig
 aws deploy create-deployment --application-name $cdAppName --deployment-config-name $cdDeploymentConfigName --deployment-group-name $cdDeployGroupName --description "$cdDeploymentDescription" --s3-location bucket=$s3BucketName,bundleType=zip,key=spinupApp.zip
 
 echo "Sleep 20 minutes to allow software installing upon this instance."
-pwd
-ls -l countdownTimer.sh
+cd "$basedir"
 ./countdownTimer.sh 1200
 
 PublicIpAddress=`aws ec2 describe-instances --filters "Name=tag:UUID,Values=$UUID" --query "Reservations[].Instances[].PublicIpAddress" --output text`
