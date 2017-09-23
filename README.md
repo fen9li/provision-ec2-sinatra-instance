@@ -117,7 +117,7 @@ Unpacking objects: 100% (60/60), done.
  provision-ec2-sinatra-instance]$
 ```
 
-* Configure rolesAndBucket.conf and run ./createRolesAndBucket.sh to create aws s3 bucket and 2 IAM roles. Double check from aws management console to ensure.
+* Configure rolesAndBucket.conf and run ./createRolesAndBucket.sh to create 1 s3 bucket and 2 IAM roles. Double check from aws management console to ensure.
 * Configure Github repo and branch where ruby code have been pushed. Configure base directory, cloudformation stack name and parameters and codedeploy related names as per invidual favour in spinup.conf. 
 * Run ./spinup.sh script now and you go ...
 
