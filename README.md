@@ -79,7 +79,7 @@ Unpacking objects: 100% (60/60), done.
 ~]$
 ```
 
-* Expected files and directories after git clone should be as below: 
+* Expected files and directories structure after git clone should be as below: 
 
 ```sh
 ~]$ tree
