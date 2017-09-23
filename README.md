@@ -123,7 +123,7 @@ Unpacking objects: 100% (60/60), done.
 
 ```sh
  provision-ec2-sinatra-instance]$ ./spinup.sh
-Fri Sep 22 23:26:11 AEST 2017
+Fri Sep 22 13:26:11 AEST 2017
 Starting cleanup of possible legacy resources
 ...
 ############################
@@ -139,7 +139,7 @@ Instance Id: i-xxxxxxxxxxxxxxxxx
 TagKey name: UUID
 TageKey value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Fri Sep 22 23:56:36 AEST 2017
+Fri Sep 22 13:56:36 AEST 2017
 ############################
  provision-ec2-sinatra-instance]$
 ```
