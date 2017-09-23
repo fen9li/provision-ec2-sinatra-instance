@@ -108,7 +108,7 @@ Unpacking objects: 100% (60/60), done.
 ~]$
 ```
 
-* Move to base directory (suppose you start git clone from your home directory)
+* Move to base directory (suppose you start from home directory)
 
 ```sh
 ]$ cd provision-ec2-sinatra-instance/
