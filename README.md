@@ -146,7 +146,7 @@ Fri Sep 22 13:56:36 AEST 2017
 ### Daily operation tasks 
 * To lock down new provisioned instances, just destroy the private key of the keypair. Once you are happy with everything and no need to logon any new instances, destroy the private key. This will give new instances hightest security.
 * To test new version ruby code in same Github repo and branch, move to base directory and run ./spinup.sh script directly.
-* To test new version ruby code in different Github repo and branch, configure 'webAppRepo' & 'webAppRepo' in spinup.conf accordingly and then run ./spinup.sh script.
+* To test new version ruby code in different Github repo and branch, configure 'webAppRepo' & 'webAppRepoBranch' in spinup.conf accordingly and then run ./spinup.sh script.
 
 ```sh
 [username@hostname provision-ec2-sinatra-instance]$ grep webAppRepo spinup.conf
