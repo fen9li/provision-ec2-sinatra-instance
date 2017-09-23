@@ -161,7 +161,7 @@ webAppRepoBranch="develop"
 # Where to go next
 * This CI solution is designed for ruby sinatra based web app code testing at the time of writing. However, with extra time and effort, it can be tailored to test any source code, such as php etc.  
 * The solution can be easily intergrated with Puppet, which makes it a powerful solution to support large scale environment.
-* This solution can provision an ec2 instance to test ruby sinatra based web app code in around 30 minutes. It is recommended to create a private AMI to speed up the provisioning process, should the code needs to test several times a day.
+* This solution can provision an ec2 instance to test ruby sinatra based web app code in around 30 minutes. The time allocated to software installation on aws base linux instance is 20 minutes. It is recommended to create a private AMI to speed up the provisioning process, should the code needs to test several times a day.
 * It is recommended to do further automation based on this soultion, which aims new version source code pushing to Github would trigger the testing procedure automatically. 
 * Every time spinup.sh script runs, aws allocates a public IP address from its public IP address pool. So the new instance public IP address is not a fix IP address. This wont be a problem in real life. But if a fix IP address is required, an EIP resource can be added. 
 
