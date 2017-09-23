@@ -66,60 +66,58 @@ Unpacking objects: 100% (8/8), done.
  ~]$
 ```
 
-### First time run
+### Set up
 * git clone below repo from develop branch (I am not ready to merge into master branch at the time of writing this README). 
 
 ```sh
-~]$ git clone -b develop https://github.com/fen9li/provision-ec2-sinatra-instance
+[username@hostname test]$ git clone -b develop https://github.com/fen9li/provision-ec2-sinatra-instance
 Cloning into 'provision-ec2-sinatra-instance'...
-remote: Counting objects: 60, done.
-remote: Compressing objects: 100% (44/44), done.
-remote: Total 60 (delta 28), reused 43 (delta 14), pack-reused 0
-Unpacking objects: 100% (60/60), done.
-~]$
+remote: Counting objects: 116, done.
+remote: Compressing objects: 100% (91/91), done.
+remote: Total 116 (delta 65), reused 58 (delta 23), pack-reused 0
+Receiving objects: 100% (116/116), 21.08 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (65/65), done.
+[username@hostname test]$ cd provision-ec2-sinatra-instance/
+[username@hostname provision-ec2-sinatra-instance]$ pwd
+/home/username/test/provision-ec2-sinatra-instance
+[username@hostname provision-ec2-sinatra-instance]$
 ```
 
-* Expected files and directories structure after git clone: 
+> Make a note on 'pwd' command output. It is the basedir in spinup.conf. 
+
+* Expected files and directories structure when change directory to base directory: 
 
 ```sh
-~]$ tree
+[username@hostname provision-ec2-sinatra-instance]$ tree
 .
-└── provision-ec2-sinatra-instance
-    ├── cfTemplate.json
-    ├── cleanupSpinup.sh
-    ├── CodeDeployServiceRole-Trust.json
-    ├── countdownTimer.sh
-    ├── createRolesAndBucket.sh
-    ├── deleteRolesAndBucket.sh
-    ├── fliSinatra-EC2-S3-Permissions.json
-    ├── fliSinatra-EC2-Trust.json
-    ├── rolesAndBucket.conf
-    ├── spinupApp
-    │   ├── afterInstall.sh
-    │   ├── appspec.yml
-    │   ├── preInstall.sh
-    │   ├── spinupSinatra.sh
-    │   └── startSpinupApp.sh
-    ├── spinup.conf
-    ├── spinup.sh
-    └── updateAppArchive.sh
+├── cfTemplate.json
+├── cleanupSpinup.sh
+├── CodeDeployServiceRole-Trust.json
+├── countdownTimer.sh
+├── createRolesAndBucket.sh
+├── deleteRolesAndBucket.sh
+├── fliSinatra-EC2-S3-Permissions.json.base
+├── fliSinatra-EC2-Trust.json
+├── README.md
+├── spinupApp
+│   ├── afterInstall.sh
+│   ├── appspec.yml
+│   ├── preInstall.sh
+│   ├── spinupSinatra.sh
+│   └── startSpinupApp.sh
+├── spinup.conf
+├── spinup.sh
+└── updateAppArchive.sh
 
-2 directories, 17 files
-~]$
+1 directory, 17 files
+[username@hostname provision-ec2-sinatra-instance]$
 ```
 
-* Move to base directory (suppose you start from home directory)
+* Configure spinup.conf 
+> Please be very careful with those one time off settings, such as s3 bucket name and aws region. It is recommended to do it only at this set up stage. Once set, dont change it.  
+* run ./createRolesAndBucket.sh to create one s3 bucket and two IAM roles. Double check from aws management console to ensure.
 
-```sh
-]$ cd provision-ec2-sinatra-instance/
- provision-ec2-sinatra-instance]$ pwd
-/home/<your user account name>/provision-ec2-sinatra-instance
- provision-ec2-sinatra-instance]$
-```
-
-* Configure rolesAndBucket.conf and run ./createRolesAndBucket.sh to create 1 s3 bucket and 2 IAM roles. Double check from aws management console to ensure.
-* Configure Github repo and branch where ruby code have been pushed. Configure base directory, cloudformation stack name and parameters and codedeploy related names as per invidual favour in spinup.conf. 
-* Run ./spinup.sh script now and you go ...
+### Run ./spinup.sh script 
 
 ```sh
  provision-ec2-sinatra-instance]$ ./spinup.sh
