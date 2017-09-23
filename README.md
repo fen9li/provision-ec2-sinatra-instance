@@ -113,7 +113,7 @@ Resolving deltas: 100% (65/65), done.
 ```
 
 * Configure spinup.conf 
-> Please be very careful with those one time off settings, such as s3 bucket name and aws region. It is recommended to do it only at this set up stage. Once set, dont change it. Please double check base directory setting, which is very critical to run all the scripts.  
+> Please be very careful with those one time off settings, such as s3 bucket name and aws region. It is recommended to do it only at this set up stage. Once set, dont change it. Please double check base directory setting as well, which is very critical to run all the scripts.
 * run ./createRolesAndBucket.sh to create one s3 bucket and two IAM roles. Double check from aws management console to ensure.
 
 ### Run ./spinup.sh script 
