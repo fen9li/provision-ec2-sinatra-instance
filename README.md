@@ -142,7 +142,7 @@ Fri Sep 22 13:56:36 AEST 2017
 [username@hostname provision-ec2-sinatra-instance]$
 ```
 
-* It takes 30 minutes to get the result. 
+> It takes 30 minutes to get the result. 
 
 ### Daily operation tasks 
 * To lock down new provisioned instances, just destroy the private key of the keypair. Once you are happy with everything and no need to logon any new instances, destroy the private key. This will give new instances hightest security.
