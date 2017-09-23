@@ -137,7 +137,7 @@ http://54.252.251.160/
 Also you can double check from your aws management console, you should be able to see an ec2 instance with below details...
 Instance Id: i-xxxxxxxxxxxxxxxxx
 TagKey name: UUID
-TageKey value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TagKey value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Fri Sep 22 13:56:36 AEST 2017
 ############################
