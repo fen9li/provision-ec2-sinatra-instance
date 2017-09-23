@@ -13,7 +13,7 @@ Continuous Integration (CI) is a development practice that requires developers t
   - Testing result is ready for reviewing after 30 minutes
 
 # AWS resources / services consumed / used in this solution
-
+> All required aws resoureces are self contained, automatically created and can be easily cleaned up.
   - A t2.micro ec2 Linux instance (freetier eligible)
   - A s3 bucket (capacity consumed depends on the ruby code size for testing)
   - cloudformation service
