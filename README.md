@@ -82,7 +82,7 @@ Resolving deltas: 100% (65/65), done.
 [username@hostname provision-ec2-sinatra-instance]$
 ```
 
-> Make a note on 'pwd' command output. It is the basedir in spinup.conf. 
+> Make a note on 'pwd' command output. This is the base directory must be configured correctly in spinup.conf. 
 
 * Expected files and directories structure when change directory to base directory: 
 
