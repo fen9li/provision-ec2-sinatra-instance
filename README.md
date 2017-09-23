@@ -34,36 +34,36 @@ Continuous Integration (CI) is a development practice that requires developers t
 * Issue 'aws --version' command and should see similar like below: 
 
 ```sh
- ~]$ aws --version
+[username@hostname ~]$ aws --version
 aws-cli/1.11.151 Python/2.7.5 Linux/3.10.0-514.26.2.el7.x86_64 botocore/1.7.9
- ~]$
+[username@hostname ~]$
 ```
 
 * Ensure configure it as per your own access credentials: 
 ```sh
- ~]$ cat .aws/config
+[username@hostname ~]$ cat .aws/config
 [default]
 output = json
 region = ap-southeast-2
- ~]$ cat .aws/credentials
+[username@hostname ~]$ cat .aws/credentials
 [default]
 aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
 aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
- ~]$
+[username@hostname ~]$
 ```
 
 * Install git on this linux management host if not yet and test if you can clone a repo from Github:
  
 ```sh
- ~]$ git --version
+[username@hostname ~]$ git --version
 git version 1.8.3.1
- ~]$ git clone https://github.com/fen9li/simple-sinatra-app
+[username@hostname ~]$ git clone https://github.com/fen9li/simple-sinatra-app
 Cloning into 'simple-sinatra-app'...
 remote: Counting objects: 8, done.
 remote: Compressing objects: 100% (6/6), done.
 remote: Total 8 (delta 1), reused 8 (delta 1), pack-reused 0
 Unpacking objects: 100% (8/8), done.
- ~]$
+[username@hostname ~]$
 ```
 
 ### Set up
@@ -120,7 +120,7 @@ Resolving deltas: 100% (65/65), done.
 ### Run ./spinup.sh script 
 
 ```sh
- provision-ec2-sinatra-instance]$ ./spinup.sh
+[username@hostname provision-ec2-sinatra-instance]$ ./spinup.sh
 Fri Sep 22 13:26:11 AEST 2017
 Starting cleanup of possible legacy resources
 ...
@@ -139,7 +139,7 @@ TagKey value: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Fri Sep 22 13:56:36 AEST 2017
 ############################
- provision-ec2-sinatra-instance]$
+[username@hostname provision-ec2-sinatra-instance]$
 ```
 
 * It takes 30 minutes to get the result. 
@@ -150,10 +150,10 @@ Fri Sep 22 13:56:36 AEST 2017
 * To test new version ruby code in different Github repo and branch, configure 'webAppRepo' & 'webAppRepo' in spinup.conf accordingly and then run ./spinup.sh script.
 
 ```sh
- provision-ec2-sinatra-instance]$ grep webAppRepo spinup.conf
+[username@hostname provision-ec2-sinatra-instance]$ grep webAppRepo spinup.conf
 webAppRepo="https://github.com/fen9li/simple-sinatra-app"
 webAppRepoBranch="develop"
- provision-ec2-sinatra-instance]$
+[username@hostname provision-ec2-sinatra-instance]$
 ```
 
 * To cleanup aws resources when finish ruby code testing, run ./cleanupSpinup.sh.
