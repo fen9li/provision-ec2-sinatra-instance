@@ -1,4 +1,4 @@
-# Provision AWS EC2 instance to Test Ruby Code on Gitgub Continuously 
+# Provision AWS EC2 instance to Test Ruby Code on GitHub Continuously 
 
 Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early. This project implements a solution to let developers / system engineers test ruby base web code on Github easily.
 
