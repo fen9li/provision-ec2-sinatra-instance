@@ -145,7 +145,6 @@ Fri Sep 22 13:56:36 AEST 2017
 ```
 
 * It takes 30 minutes to get the result. 
-* Logon this new instance and check up directory "/opt/codedeploy-agent/deployment-root/<deploymentGroupId>/<deploymentId>" and have fun.
 
 ### Daily operation tasks 
 * To lock down new provisioned instances, just destroy the private key of the keypair. Once you are happy with everything and no need to logon any new instances, destroy the private key. This will give new instances hightest security.
