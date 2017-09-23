@@ -1,9 +1,16 @@
 #!/bin/bash
-# Run this script to delete 'CodeDeployServiceRole' &
-# 'fliSinatra-EC2-Instance-Profile'
+
+
+# Important Notes!!!
+# Important Notes!!!
+# Important Notes!!!
+# Only run this script to delete when you want to remove
+# s3 bucket
+# CodeDeployServiceRole
+# fliSinatra-EC2-Instance-Profile
 
 # Get configuration variables
-source rolesAndBucket.conf
+source spinup.conf
 
 # Delete CodeDeployServiceRole
 echo "Detach CodeDeployServiceRole policy"

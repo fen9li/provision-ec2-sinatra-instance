@@ -3,7 +3,6 @@
 # Usage: cd to the directory containing this script (the base directory) 
 #        give the command "./spinup.sh"
 
-source rolesAndBucket.conf
 source spinup.conf
 
 echo `date`

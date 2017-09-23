@@ -6,7 +6,6 @@
 #        give the command "./updateAppArchive.sh"
 
 source spinup.conf
-source rolesAndBucket.conf
 
 # get web app repo name
 webAppRepoName="$(cut -d'/' -f5 <<<"$webAppRepo")"

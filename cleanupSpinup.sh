@@ -7,7 +7,6 @@
 
 echo "Starting cleanup of possible legacy resources"
 
-source rolesAndBucket.conf
 source spinup.conf
 
 # Clean up any previous CloudFormation stack (stack name: provisionSinatraWebService)

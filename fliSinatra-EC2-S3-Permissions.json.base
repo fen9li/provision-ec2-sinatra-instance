@@ -8,8 +8,8 @@
         "s3:List*"
       ],
       "Resource": [
-        "arn:aws:s3:::fli-sinatra/*",
-        "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*"
+        "arn:aws:s3:::s3BucketName/*",
+        "arn:aws:s3:::aws-codedeploy-regionName/*"
       ]
     }
   ]
