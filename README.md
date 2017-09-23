@@ -30,7 +30,7 @@ Continuous Integration (CI) is a development practice that requires developers t
 # Usage
 ### Prepare
 > Setup a linux host as management host (or can be called build server), which is aws cli and Github ready 
-* The linux host can be an on-premise one or an aws ec2 instance; Can be a physical one or virtual.
+> The linux host can be an on-premise one or an aws ec2 instance; Can be a physical one or virtual.
 * Issue 'aws --version' command and should see similar like below: 
 
 ```sh
