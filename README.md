@@ -37,6 +37,27 @@ Continuous Integration (CI) is a development practice that requires developers t
 * Install git,zip,unzip,curl,wget,tree. Install and configure aws cli.
 
 ```sh
+~]# yum -y update
+... ...
+~]# uname -a
+Linux sinatra.fen9.li 3.10.0-514.26.2.el7.x86_64 #1 SMP Tue Jul 4 15:04:05 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+~]# cat /etc/os-release
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
 ~]# yum -y install git zip unzip wget tree curl
 ... ...
 ~]$ aws --version
@@ -137,6 +158,28 @@ provision-ec2-sinatra-instance]$
 8. codeDeployServiceRoleName & instanceProfileName – two roles required in this solution. Once set, dont change it.
 9. Other settings – as per invidual favour.
 
+An example:
+
+```sh
+ provision-ec2-sinatra-instance]$ egrep -v -e '^#' -e '^$' spinup.conf
+webAppRepo="https://github.com/fen9li/simple-sinatra-app"
+webAppRepoBranch="develop"
+basedir="/home/fli/provision-ec2-sinatra-instance"
+cfStackName="provisionSinatraWebService"
+SSHLocation="0.0.0.0/0"
+imageId="ami-30041c53"
+keyName="sinatra-lockdown-keypair-public"
+cdAppName="spinupSinatraServer"
+cdDeployGroupName="spinupSinatraServerDG"
+cdDeploymentConfigName="spinupSinatraServerDefault"
+cdDeploymentDescription="Spin up Sinatra Server Deployment"
+s3BucketName="fli-sinatra"
+region="ap-southeast-2"
+codeDeployServiceRoleName="CodeDeployServiceRole"
+instanceProfileName="fliSinatra-EC2-Instance-Profile"
+ provision-ec2-sinatra-instance]$
+```
+
 * run ./createRolesAndBucket.sh to create required s3 bucket and IAM roles. Double check from aws management console to ensure.
 
 ### Run ./spinup.sh script
@@ -164,7 +207,7 @@ Fri Sep 22 13:56:36 AEST 2017
 provision-ec2-sinatra-instance]$
 ```
 
-> It takes 30 minutes to get the result. 5 minutes are allocated for cleaning up possible legacy resources. 5 minutes are allocated for new instance up. 20 minutes are allocated for getting ready web service on new instance.
+> It takes 30 minutes to get the result. 5 minutes for cleaning up possible legacy resources. 5 minutes for launching new instance. 20 minutes for getting ready web service on new instance.
 
 ### Daily operation tasks
 > Lock down new instance by using sinatra-lockdown-keypair in daily operation. 
