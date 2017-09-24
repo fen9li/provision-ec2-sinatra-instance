@@ -182,6 +182,16 @@ instanceProfileName="fliSinatra-EC2-Instance-Profile"
 
 * run ./createRolesAndBucket.sh to create required s3 bucket and IAM roles. Double check from aws management console to ensure.
 
+```sh
+ provision-ec2-sinatra-instance]$ ./createRolesAndBucket.sh
+Creating s3 bucket
+{
+    "Location": "http://fli-sinatra.s3.amazonaws.com/"
+}
+... ...
+ provision-ec2-sinatra-instance]$
+```
+
 ### Run ./spinup.sh script
 
 ```sh
@@ -210,7 +220,7 @@ provision-ec2-sinatra-instance]$
 > It takes 30 minutes to get the result. 5 minutes for cleaning up possible legacy resources. 5 minutes for launching new instance. 20 minutes for getting ready web service on new instance.
 
 ### Daily operation tasks
-> Lock down new instance by using sinatra-lockdown-keypair in daily operation. 
+> Lock down new instance by using sinatra-lockdown-keypair. 
 
 * To test new version code in Github repo, configure 'webAppRepo' & 'webAppRepoBranch' in spinup.conf accordingly and then run ./spinup.sh script.
 
