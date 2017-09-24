@@ -224,6 +224,8 @@ provision-ec2-sinatra-instance]$
 
 * To test new version code in Github repo, configure 'webAppRepo' & 'webAppRepoBranch' in spinup.conf accordingly and then run ./spinup.sh script.
 
+* To logon new instance for debugging, configure keyName="sinatra-ssh-keypair-public" in spinup.conf and then run ./spinup.sh script.
+
 * To stop code testing and clean up provisioned aws resources, run ./cleanupSpinup.sh script.
 
 * To cleanup s3 bucket and IAM roles, run ./cleanupSpinup.sh script first to clean up aws resources, then run ./deleteRolesAndBucket.sh script to delete s3 bucket and IAM roles.
