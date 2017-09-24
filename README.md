@@ -34,10 +34,10 @@ Continuous Integration (CI) is a development practice that requires developers t
 > The linux host can be an on-premise one or an aws ec2 instance; Can be a physical one or virtual.
 > Configure ssh keypair and lockdown keypair.
 
-* Install zip,tree. Install and configure aws cli. Install git.
+* Install git,zip,unzip,curl,wget,tree. Install and configure aws cli.
 
 ```sh
-~]# yum -y install zip tree
+~]# yum -y install git zip unzip wget tree curl
 
 ~]$ aws --version
 aws-cli/1.11.151 Python/2.7.5 Linux/3.10.0-514.26.2.el7.x86_64 botocore/1.7.9
