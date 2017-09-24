@@ -152,7 +152,7 @@ provision-ec2-sinatra-instance]$
 2. webAppRepo & webAppRepoBranch – Github repo and branch where the testing code is kept.
 3. SSHLocation – the IP address from which ssh is allowed to new instance.
 4. imageId – the AMI used to lauch new instance. Must set to Amazon base linux image (ami-30041c53) in this solution code context.
-5. KeyName – default set to sinatra-lockdown-keypair-public to lockdown new instance. Set to sinatra-ssh-keypair-public to allow logon to new instance, for example debugging is required.  
+5. KeyName – default set to sinatra-lockdown-keypair-public to lockdown new instance. Set to sinatra-ssh-keypair-public to allow logon to new instance, for example when debugging is required.  
 6. s3BucketName – the s3 bucket used as placeholder for testing code archive. Once set, dont change it.
 7. region – the aws region from which run this solution. Once set, don’t change it.
 8. codeDeployServiceRoleName & instanceProfileName – two roles required in this solution. Once set, dont change it.
