@@ -8,8 +8,8 @@ Continuous Integration (CI) is a development practice that requires developers t
 
 # How it works
 
-  - Developers have a new version ruby code pushed to Github for testing
-  - Developer / system engineers run spinup.sh script from an aws management host
+  - Developers push new version code to GitHub repo for testing
+  - Developer / system engineers run spinup.sh script from an aws management host to test the codes
   - Testing result is ready for reviewing after 30 minutes
 
 # AWS resources / services consumed / used in this solution
