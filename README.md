@@ -34,9 +34,11 @@ Continuous Integration (CI) is a development practice that requires developers t
 > The linux host can be an on-premise one or an aws ec2 instance; Can be a physical one or virtual.
 > Configure ssh keypair and lockdown keypair.
 
-* Install and configure aws cli by following normal aws procedure. Ensure it works as below:
+* Install zip. Install and configure aws cli. Install git.
 
 ```sh
+~]# yum -y install zip
+
 ~]$ aws --version
 aws-cli/1.11.151 Python/2.7.5 Linux/3.10.0-514.26.2.el7.x86_64 botocore/1.7.9
 ~]$
@@ -48,6 +50,16 @@ region = ap-southeast-2
 [default]
 aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
 aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+~]$
+
+~]$ git --version
+git version 1.8.3.1
+~]$ git clone https://github.com/fen9li/simple-sinatra-app
+Cloning into 'simple-sinatra-app'...
+remote: Counting objects: 8, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 8 (delta 1), reused 8 (delta 1), pack-reused 0
+Unpacking objects: 100% (8/8), done.
 ~]$
 ```
 
@@ -69,22 +81,6 @@ aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 }
 ~]$
 ```
-
-* Install git on this linux management host if not yet and test to ensure that you can clone repo from Github:
-
-```sh
-~]$ git --version
-git version 1.8.3.1
-~]$ git clone https://github.com/fen9li/simple-sinatra-app
-Cloning into 'simple-sinatra-app'...
-remote: Counting objects: 8, done.
-remote: Compressing objects: 100% (6/6), done.
-remote: Total 8 (delta 1), reused 8 (delta 1), pack-reused 0
-Unpacking objects: 100% (8/8), done.
-~]$
-```
-
-
 
 ### Set up
 * Clone repo 'https://github.com/fen9li/provision-ec2-sinatra-instance' upon develop branch.

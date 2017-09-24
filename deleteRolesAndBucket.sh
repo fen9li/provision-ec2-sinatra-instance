@@ -1,10 +1,6 @@
 #!/bin/bash
 
-
-# Important Notes!!!
-# Important Notes!!!
-# Important Notes!!!
-# Only run this script to delete when you want to remove
+# Run this script to delete:
 # s3 bucket
 # CodeDeployServiceRole
 # fliSinatra-EC2-Instance-Profile
