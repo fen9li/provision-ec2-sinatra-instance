@@ -34,10 +34,10 @@ Continuous Integration (CI) is a development practice that requires developers t
 > The linux host can be an on-premise one or an aws ec2 instance; Can be a physical one or virtual.
 > Configure ssh keypair and lockdown keypair.
 
-* Install zip. Install and configure aws cli. Install git.
+* Install zip,tree. Install and configure aws cli. Install git.
 
 ```sh
-~]# yum -y install zip
+~]# yum -y install zip tree
 
 ~]$ aws --version
 aws-cli/1.11.151 Python/2.7.5 Linux/3.10.0-514.26.2.el7.x86_64 botocore/1.7.9
@@ -113,11 +113,11 @@ provision-ec2-sinatra-instance]$ tree
 ├── fliSinatra-EC2-Trust.json
 ├── README.md
 ├── spinupApp
-│   ├── afterInstall.sh
-│   ├── appspec.yml
-│   ├── preInstall.sh
-│   ├── spinupSinatra.sh
-│   └── startSpinupApp.sh
+│   ├── afterInstall.sh
+│   ├── appspec.yml
+│   ├── preInstall.sh
+│   ├── spinupSinatra.sh
+│   └── startSpinupApp.sh
 ├── spinup.conf
 ├── spinup.sh
 └── updateAppArchive.sh
