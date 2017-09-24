@@ -38,7 +38,7 @@ Continuous Integration (CI) is a development practice that requires developers t
 
 ```sh
 ~]# yum -y install git zip unzip wget tree curl
-
+... ...
 ~]$ aws --version
 aws-cli/1.11.151 Python/2.7.5 Linux/3.10.0-514.26.2.el7.x86_64 botocore/1.7.9
 ~]$
