@@ -127,15 +127,15 @@ provision-ec2-sinatra-instance]$
 ```
 
 * Configure spinup.conf
-> basedir – the base directory. Must be configured correctly. Wont change in daily operation.
-> webAppRepo & webAppRepoBranch – Github repo and branch where the testing code is kept.
-> SSHLocation – the IP address from which ssh is allowed to new instance.
-> imageId – the AMI used to lauch new instance. Must set to Amazon base linux image (ami-30041c53) in this solution code context.
-> KeyName – default set to sinatra-lockdown-keypair-public to lockdown new instance. Set to sinatra-ssh-keypair-public to allow logon to new instance, for example debugging is required.  
-> s3BucketName – the s3 bucket used as placeholder for testing code archive. Once set, dont change it.
-> region – the aws region from which run this solution. Once set, don’t change it.
-> codeDeployServiceRoleName & instanceProfileName – two roles required in this solution. Once set, dont change it.
-> Other settings – as per invidual favour.
+1. basedir – the base directory. Must be configured correctly. Wont change in daily operation.
+2. webAppRepo & webAppRepoBranch – Github repo and branch where the testing code is kept.
+3. SSHLocation – the IP address from which ssh is allowed to new instance.
+4. imageId – the AMI used to lauch new instance. Must set to Amazon base linux image (ami-30041c53) in this solution code context.
+5. KeyName – default set to sinatra-lockdown-keypair-public to lockdown new instance. Set to sinatra-ssh-keypair-public to allow logon to new instance, for example debugging is required.  
+6. s3BucketName – the s3 bucket used as placeholder for testing code archive. Once set, dont change it.
+7. region – the aws region from which run this solution. Once set, don’t change it.
+8. codeDeployServiceRoleName & instanceProfileName – two roles required in this solution. Once set, dont change it.
+9. Other settings – as per invidual favour.
 
 * run ./createRolesAndBucket.sh to create required s3 bucket and IAM roles. Double check from aws management console to ensure.
 
