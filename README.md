@@ -15,7 +15,7 @@ Continuous Integration (CI) is a development practice that requires developers t
 # AWS resources / services consumed / used in this solution
 > AWS Freetier user eligible. 
 > All required aws resoureces are self contained, automatically created and can be easily cleaned up.
-  - A ec2 Linux instance - t2.micro (freetier eligible)
+  - An ec2 Linux instance - t2.micro (freetier eligible)
   - A s3 bucket - capacity consumed depends on the ruby code size for testing (5GiB for freetier user)
   - cloudformation service (free of charge)
   - codedeploy service (free of charge)
